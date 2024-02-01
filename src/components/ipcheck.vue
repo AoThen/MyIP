@@ -309,7 +309,7 @@ export default {
 
     // 从 GCR 获取 IP 地址
     getIPFromGCR() {
-      const url = `https://getipfromgoogle.ipcheck.ing/`;
+      const url = `https://api.ip.sb/jsonip`;
 
       fetch(url)
         .then((response) => {

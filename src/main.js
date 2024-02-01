@@ -3,19 +3,19 @@ import i18n from './i18n';
 import './style.css'
 import App from './App.vue'
 import store from './store';
-import Analytics from 'analytics';
-import googleAnalytics from '@analytics/google-analytics';
+// import Analytics from 'analytics';
+// import googleAnalytics from '@analytics/google-analytics';
 
 const app = createApp(App);
 
-const analytics = Analytics({
-    app: 'MyIP',
-    plugins: [
-        googleAnalytics({
-            measurementIds: ['G-TEYKKD81TL'],
-        })
-    ]
-});
+// const analytics = Analytics({
+//     app: 'MyIP',
+//     plugins: [
+//         googleAnalytics({
+//             measurementIds: ['G-TEYKKD81TL'],
+//         })
+//     ]
+// });
 
 
 // 窗口大小变化处理函数
@@ -62,18 +62,18 @@ window.addEventListener('resize', handleResize);
 window.addEventListener('popstate', setLanguageFromURL);
 
 // 启动 Google Analytics
-analytics.page();
+// analytics.page();
 
 app.use(store);
 app.use(i18n);
 app.config.globalProperties.$Lang = i18n.global.locale;
-app.config.globalProperties.$analytics = analytics;
+// app.config.globalProperties.$analytics = analytics;
 
-app.config.globalProperties.$trackEvent = function (category, action, label) {
-    analytics.track(action, {
-        category: category,
-        label: label,
-    });
-};
+// app.config.globalProperties.$trackEvent = function (category, action, label) {
+//     analytics.track(action, {
+//         category: category,
+//         label: label,
+//     });
+// };
 
 app.mount('#app');
