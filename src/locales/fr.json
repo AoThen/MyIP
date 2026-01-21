@@ -15,8 +15,6 @@
         "Title": "Infos IP",
         "Notes": "Les données IP seront vérifiées à partir de 6 sources. S'il n'y a qu'une seule pile IP actuellement, les sources sans données s'afficheront comme vides.",
         "Simple": "Simple",
-        "Map": "Carte",
-        "MapUnavailable": "Carte non disponible",
         "Source": "Source",
         "IP": "IP",
         "Country": "Région",
@@ -134,10 +132,9 @@
         "RefreshWebRTC": "Actualiser le test WebRTC",
         "RefreshDNSLeakTest": "Actualiser le test de fuite DNS",
         "StartSpeedTest": "Démarrer le test de vitesse",
-        "ToggleMaps": "Activer/désactiver les cartes",
+        "ToggleCollapse": "Masquer/Afficher",
         "IPCheck": "Vérification IP",
-        "AddBingMapKey": "Ajouter une clé API Bing Map",
-        "ToggleInfoMask": "Activer/désactiver le masquage des informations",
+        "ToggleInfoMask": "Masquer les informations",
         "Help": "Afficher les raccourcis clavier",
         "HelpNote": "Les personnes qui utilisent des raccourcis clavier sont vraiment géniales !",
         "GoNext": "Carte suivante",
@@ -152,14 +149,6 @@
         "copyRightName": "Originalement de ",
         "copyRightLink": "https://ipcheck.ing",
         "copyRightLinkName": "IPCheck.ing"
-    },
-    "addBingMapKey": {
-        "Title": "Ajouter une clé API Bing Map",
-        "Note": "Après l'ajout, la carte peut être affichée dans les informations IP. La clé API sera uniquement enregistrée dans le navigateur actuel pour une utilisation ultérieure et ne sera pas téléchargée sur le serveur.",
-        "Placeholder": "Veuillez entrer une clé API Bing Map valide",
-        "Button": "Enregistrer",
-        "removeButton": "Supprimer",
-        "Error": "Veuillez entrer une clé API Bing Map valide."
     },
     "helpModal": {
         "Title": "Raccourcis"
@@ -331,31 +320,31 @@
                 ]
             },
             {
-                    "version": "v3.1",
-                    "date": "Jan 30, 2024",
-                    "content": [
-                        {
-                            "type": "add",
-                            "change": "Ajout de la prise en charge d'une nouvelle langue : français"
-                        },
-                        {
-                            "type": "add",
-                            "change": "Ajout d'une animation de chargement des données"
-                        },
-                        {
-                            "type": "improve",
-                            "change": "Optimisation de la stratégie de cache"
-                        },
-                        {
-                            "type": "improve",
-                            "change": "Ajustement du style du mode sombre"
-                        },
-                        {
-                            "type": "fix",
-                            "change": "Correction de quelques problèmes mineurs"
-                        }
-                    ]
-                }
+                "version": "v3.1",
+                "date": "Jan 30, 2024",
+                "content": [
+                    {
+                        "type": "add",
+                        "change": "Ajout de la prise en charge d'une nouvelle langue : français"
+                    },
+                    {
+                        "type": "add",
+                        "change": "Ajout d'une animation de chargement des données"
+                    },
+                    {
+                        "type": "improve",
+                        "change": "Optimisation de la stratégie de cache"
+                    },
+                    {
+                        "type": "improve",
+                        "change": "Ajustement du style du mode sombre"
+                    },
+                    {
+                        "type": "fix",
+                        "change": "Correction de quelques problèmes mineurs"
+                    }
+                ]
+            }
         ]
     }
 }

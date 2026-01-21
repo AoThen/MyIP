@@ -1,19 +1,16 @@
-import { createI18n } from 'vue-i18n';
+import { createI18n } from 'vue-i18n'
 
+import en from './locales/en.json'
+import zh from './locales/zh.json'
+import fr from './locales/fr.json'
 
-import en from './locales/en.json';
-import zh from './locales/zh.json';
-import fr from './locales/fr.json';
-
-
-const messages = { en, zh, fr };
-
+const messages = { en, zh, fr }
 
 const i18n = createI18n({
-  legacy: true,
-  locale: 'en',
-  fallbackLocale: 'en',
-  messages,
-});
+    legacy: true,
+    locale: 'en',
+    fallbackLocale: 'en',
+    messages
+})
 
-export default i18n;
+export default i18n
