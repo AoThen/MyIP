@@ -89,7 +89,6 @@
                                 >
                                     <span class="jn-text">🏚️ {{ $t('ipInfos.Region') }}</span>
                                     : {{ card.region }}
-                                    }}
                                 </li>
                                 <li
                                     v-show="!isMobile || !isCardsCollapsed"
@@ -284,18 +283,31 @@ export default {
             this.isCardsCollapsed = !this.isCardsCollapsed
         },
 
-        // 从淘宝获取 IP 地址
+        // 从 PConline 获取 IP 地址
         getIPFromTaobao() {
-            window.ipCallback = (data) => {
-                var ip = data.ip
-                this.ipDataCards[0].source = 'TaoBao'
-                this.fetchIPDetails(0, ip)
-                delete window.ipCallback
-            }
-            var script = document.createElement('script')
-            script.src = 'https://www.taobao.com/help/getip.php?callback=ipCallback'
-            document.head.appendChild(script)
-            document.head.removeChild(script)
+            const url = 'https://whois.pconline.com.cn/ipJson.jsp?ip=&json=true'
+            fetch(url)
+                .then((response) => response.text())
+                .then((data) => {
+                    try {
+                        const parser = new DOMParser()
+                        const doc = parser.parseFromString(data, 'text/html')
+                        const preContent = doc.querySelector('pre')?.textContent
+                        if (preContent) {
+                            const jsonData = JSON.parse(preContent)
+                            const ip = jsonData.ip
+                            this.ipDataCards[0].source = 'PConline'
+                            this.fetchIPDetails(0, ip)
+                        }
+                    } catch (e) {
+                        console.error('Error parsing PConline response:', e)
+                        this.ipDataCards[0].ip = this.$t('ipInfos.IPv4Error')
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error fetching IP from PConline:', error)
+                    this.ipDataCards[0].ip = this.$t('ipInfos.IPv4Error')
+                })
         },
 
         // 从特殊源获取 IP 地址

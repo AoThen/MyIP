@@ -145,15 +145,14 @@ export default {
             }
         }
     },
-    created() {
-        this.hideLoading()
-    },
+    created() {},
     mounted() {
         this.registerShortcutKeys()
         this.setupModalFocus()
         this.keyMap = keyMap
         this.sendKeyMap()
-        this.setInfosLoaded()
+        this.hideLoading()
+        this.isInfosLoaded = true
         window.addEventListener('scroll', this.checkSectionsAndTrack)
     },
     beforeUnmount() {

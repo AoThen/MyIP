@@ -1,7 +1,6 @@
 import { createApp } from 'vue'
 import i18n from './i18n'
 import './style.css'
-import '../node_modules/svgmap/dist/svgMap.min.css'
 import App from './App.vue'
 import store from './store'
 // import Analytics from 'analytics';

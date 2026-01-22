@@ -136,7 +136,8 @@
 <script>
 import { ref, computed, watch } from 'vue'
 import { useStore } from 'vuex'
-import svgMap from 'svgmap'
+
+let svgMap = null
 
 export default {
     name: 'GlobalLatency',
@@ -181,6 +182,19 @@ export default {
     },
 
     methods: {
+        async loadSvgMap() {
+            if (!svgMap) {
+                try {
+                    const module = await import('svgmap')
+                    svgMap = module.default || module
+                } catch (error) {
+                    console.warn('svgMap module failed to load:', error)
+                    svgMap = null
+                }
+            }
+            return svgMap
+        },
+
         // 发起 ping 测试
         startPingCheck() {
             this.$trackEvent('Section', 'StartClick', 'GlobalLatency')
@@ -284,7 +298,7 @@ export default {
         },
 
         // 绘制地图
-        drawMap() {
+        async drawMap() {
             const mapData = {
                 data: {
                     avgPing: {
@@ -334,17 +348,27 @@ export default {
                 }
             })
 
-            // 创建 svgMap 实例
-            new svgMap({
-                targetElementID: 'svgMap',
-                data: mapData,
-                colorMax: '#083923',
-                colorMin: '#22CB80',
-                minZoom: 1,
-                maxZoom: 1,
-                mouseWheelZoomEnabled: false,
-                initialZoom: 1
-            })
+            try {
+                const SvgMapModule = await this.loadSvgMap()
+                if (SvgMapModule) {
+                    new SvgMapModule({
+                        targetElementID: 'svgMap',
+                        data: mapData,
+                        colorMax: '#083923',
+                        colorMin: '#22CB80',
+                        minZoom: 1,
+                        maxZoom: 1,
+                        mouseWheelZoomEnabled: false,
+                        initialZoom: 1
+                    })
+                }
+            } catch (error) {
+                console.error('Error initializing svgMap:', error)
+                const svgContainer = document.getElementById('svgMap')
+                if (svgContainer) {
+                    svgContainer.innerHTML = '<p class="text-center text-muted">地图功能暂时不可用</p>'
+                }
+            }
         }
     }
 }
