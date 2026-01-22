@@ -226,7 +226,7 @@ export default {
                     mapUrl: '/defaultMap.jpg',
                     mapUrl_dark: '/defaultMap_dark.jpg',
                     showMap: false,
-                    source: 'IPify IPv4'
+                    source: 'IP.sb'
                 },
                 {
                     id: 'ipify_v6',
@@ -409,9 +409,9 @@ export default {
                 })
         },
 
-        // 从 IPify 获取 IPv4 地址
+        // 从 IP.sb 获取 IPv4 地址
         getIPFromIpify_V4() {
-            fetch('https://api4.ipify.org?format=json')
+            fetch('https://api.ip.sb/geoip/')
                 .then((response) => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok')
@@ -419,10 +419,11 @@ export default {
                     return response.json()
                 })
                 .then((data) => {
-                    this.fetchIPDetails(4, data.ip)
+                    this.ipDataCards[4].source = 'IP.sb'
+                    this.updateCardFromIPSb(4, data)
                 })
                 .catch((error) => {
-                    console.error('Error fetching IPv4 address from ipify:', error)
+                    console.error('Error fetching IPv4 address from IP.sb:', error)
                     this.ipDataCards[4].ip = this.$t('ipInfos.IPv4Error')
                 })
         },
@@ -538,9 +539,9 @@ export default {
                     this.getIPFromCloudflare_V6(card)
                     this.$trackEvent('IPCheck', 'RefreshClick', 'Cloudflare IPv6')
                     break
-                case 'IPify IPv4':
+                case 'IP.sb':
                     this.getIPFromIpify_V4(card)
-                    this.$trackEvent('IPCheck', 'RefreshClick', 'IPify IPv4')
+                    this.$trackEvent('IPCheck', 'RefreshClick', 'IP.sb')
                     break
                 case 'IPify IPv6':
                     this.getIPFromIpify_V6(card)
@@ -576,6 +577,21 @@ export default {
             card.isp = ''
             card.mapUrl = '/defaultMap.jpg'
             card.mapUrl_dark = '/defaultMap_dark.jpg'
+        },
+
+        // 从 IP.sb 的响应更新卡片
+        updateCardFromIPSb(cardIndex, data) {
+            const card = this.ipDataCards[cardIndex]
+            card.ip = data.ip
+            card.country_name = data.country
+            card.country_code = data.country_code
+            card.region = data.region
+            card.city = data.city
+            card.latitude = data.latitude
+            card.longitude = data.longitude
+            card.isp = data.isp || data.organization
+            card.asn = data.asn
+            card.asnlink = `https://radar.cloudflare.com/traffic/${data.asn}`
         },
 
         // 复制 IP 地址
