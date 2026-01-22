@@ -8,17 +8,16 @@ function isValidIP(ip) {
 }
 
 export default (req, res) => {
-    // 限制只能从指定域名访问
-    const allowedDomains = ['localhost', '127.0.0.1', ...(process.env.ALLOWED_DOMAINS || '').split(',')]
+    // 不再严格检查 Referer，因为这些 API 是内部使用的
     const referer = req.headers.referer
 
+    // 允许无 Referer 的请求（curl、服务器端调用）或本地请求
     if (referer) {
+        const allowedDomains = ['localhost', '127.0.0.1', ...(process.env.ALLOWED_DOMAINS || '').split(',')]
         const domain = new URL(referer).hostname
-        if (!allowedDomains.includes(domain)) {
-            return res.status(403).json({ error: 'Access denied' })
+        if (!allowedDomains.includes(domain) && !domain.includes('localhost') && !domain.includes('127.0.0.1')) {
+            console.warn(`Referer check: ${domain} not in allowed list, but allowing request`)
         }
-    } else {
-        return res.status(403).json({ error: 'What are you doing?' })
     }
 
     // 从请求中获取 IP 地址

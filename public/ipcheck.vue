@@ -570,7 +570,10 @@ export default {
                     this.getIPFromUpai(card)
                     this.$trackEvent('IPCheck', 'RefreshClick', 'Upai')
                     break
-
+                case 'IPCheck':
+                    this.getIPFromGCR(card)
+                    this.$trackEvent('IPCheck', 'RefreshClick', 'IPCheck')
+                    break
                 case 'TaoBao':
                     this.getIPFromTaobao(card)
                     this.$trackEvent('IPCheck', 'RefreshClick', 'TaoBao')

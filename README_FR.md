@@ -4,7 +4,7 @@
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/jason5ng32/MyIP)
 ![GitHub forks](https://img.shields.io/github/forks/jason5ng32/myip)
-![Website](https://img.shields.io/website?url=https%3A%2F%2Fipcheck.ing&up_message=online&label=IPCheck.ing)
+![Website](https://img.shields.io/website?url=https%3A%2F%2FIPCheck&up_message=online&label=IPCheck)
 ![PWA](https://img.shields.io/badge/PWA-Supported-blue)
 ![GitHub license](https://img.shields.io/github/license/jason5ng32/MyIP)
 
@@ -14,7 +14,7 @@
 
 🇺🇸 [English](README.md) | 🇨🇳 [简体中文](README_ZH.md) | 🇫🇷 [Français](README_FR.md)
 
-👉 Démo: [https://ipcheck.ing](https://ipcheck.ing)
+👉 Démo: [https://IPCheck](https://IPCheck)
 
 Notes: Vous pouvez utiliser ma démo gratuitement et vous pouvez également la déployer vous-même.
 
@@ -23,21 +23,21 @@ Notes: Vous pouvez utiliser ma démo gratuitement et vous pouvez également la d
 
 ## 👀 Principales fonctionnalités
 
-* 🖥️ **Afficher vos adresses IP** : Détecte et affiche votre adresse IP locale, provenant de plusieurs fournisseurs IPv4 et IPv6.
-* 🕵️ **Informations sur l'adresse IP** : Présente des informations détaillées pour toutes les adresses IP, y compris le pays, la région, l'ASN, la localisation géographique, et plus encore.
-* 🚦 **Vérification de disponibilité** : Teste l'accessibilité de différents sites web, tels que Google, GitHub, YouTube, ChatGPT, et d'autres.
-* 🚥 **Détection WebRTC** : Identifie l'adresse IP utilisée lors des connexions WebRTC.
-* 🛑 **Test de fuite DNS** : Affiche les données de point de terminaison DNS pour évaluer le risque de fuites DNS lors de l'utilisation de VPN ou de proxies.
-* 🚀 **Test de vitesse** : Testez la vitesse de votre réseau avec des réseaux de pointe.
-* 🌐 **Test de latence mondiale** : Effectue des tests de latence sur des serveurs situés dans différentes régions du monde.
-* 📡 **Test MTR** : Effectue des tests MTR sur des serveurs situés dans différentes régions du monde.
-* 🌗 **Mode sombre** : Bascule automatiquement entre les modes sombre et clair en fonction des paramètres du système, avec une option de basculement manuel.
-* 📱 **Mode minimaliste** : Un mode optimisé pour les mobiles qui réduit la longueur de la page pour un accès rapide aux informations essentielles.
-* 🔍 **Recherche d'informations sur l'adresse IP** : Fournit un outil pour interroger des informations sur n'importe quelle adresse IP.
-* 📲 **Prise en charge de PWA** : Peut être ajouté en tant qu'application de bureau sur votre téléphone ainsi qu'en tant qu'application Chrome sur votre ordinateur.
-* ⌨️ **Raccourcis clavier** : Prend en charge les raccourcis clavier pour toutes les fonctions, appuyez sur `?` pour afficher la liste des raccourcis.
-* 🌍 Basé sur les résultats des tests de disponibilité, il indique si l'accès Internet mondial est actuellement réalisable.
-* 🇺🇸 🇨🇳 🇫🇷 Prise en charge de l'anglais, du chinois et du français.
+- 🖥️ **Afficher vos adresses IP** : Détecte et affiche votre adresse IP locale, provenant de plusieurs fournisseurs IPv4 et IPv6.
+- 🕵️ **Informations sur l'adresse IP** : Présente des informations détaillées pour toutes les adresses IP, y compris le pays, la région, l'ASN, la localisation géographique, et plus encore.
+- 🚦 **Vérification de disponibilité** : Teste l'accessibilité de différents sites web, tels que Google, GitHub, YouTube, ChatGPT, et d'autres.
+- 🚥 **Détection WebRTC** : Identifie l'adresse IP utilisée lors des connexions WebRTC.
+- 🛑 **Test de fuite DNS** : Affiche les données de point de terminaison DNS pour évaluer le risque de fuites DNS lors de l'utilisation de VPN ou de proxies.
+- 🚀 **Test de vitesse** : Testez la vitesse de votre réseau avec des réseaux de pointe.
+- 🌐 **Test de latence mondiale** : Effectue des tests de latence sur des serveurs situés dans différentes régions du monde.
+- 📡 **Test MTR** : Effectue des tests MTR sur des serveurs situés dans différentes régions du monde.
+- 🌗 **Mode sombre** : Bascule automatiquement entre les modes sombre et clair en fonction des paramètres du système, avec une option de basculement manuel.
+- 📱 **Mode minimaliste** : Un mode optimisé pour les mobiles qui réduit la longueur de la page pour un accès rapide aux informations essentielles.
+- 🔍 **Recherche d'informations sur l'adresse IP** : Fournit un outil pour interroger des informations sur n'importe quelle adresse IP.
+- 📲 **Prise en charge de PWA** : Peut être ajouté en tant qu'application de bureau sur votre téléphone ainsi qu'en tant qu'application Chrome sur votre ordinateur.
+- ⌨️ **Raccourcis clavier** : Prend en charge les raccourcis clavier pour toutes les fonctions, appuyez sur `?` pour afficher la liste des raccourcis.
+- 🌍 Basé sur les résultats des tests de disponibilité, il indique si l'accès Internet mondial est actuellement réalisable.
+- 🇺🇸 🇨🇳 🇫🇷 Prise en charge de l'anglais, du chinois et du français.
 
 ## 📕 Comment utiliser
 
@@ -71,7 +71,7 @@ Exécuter:
 npm start
 ```
 
-Le programme s'exécutera sur le port 18966.
+Le programme s'exécutera sur le port 11966.
 
 Si vous souhaitez ajouter Bing Maps, apportez les modifications suivantes avant de démarrer :
 
@@ -116,13 +116,13 @@ IPINFO_API_TOKEN
 Cliquez sur le bouton 'Déployer sur Docker' en haut pour terminer le déploiement. Ou utilisez le shell suivant :
 
 ```bash
-docker run -d -p 18966:18966 --name myip --restart always jason5ng32/myip:latest
+docker run -d -p 11966:11966 --name myip --restart always jason5ng32/myip:latest
 ```
 
 Si vous souhaitez afficher des cartes, définissez la clé de l'API Bing Maps et les domaines autorisés lors du déploiement :
 
 ```bash
-docker run -d -p 18966:18966 \
+docker run -d -p 11966:11966 \
   -e BING_MAP_API_KEY="YOUR_KEY_HERE" \
   -e ALLOWED_DOMAINS="example.com" \
   --name myip \
@@ -133,7 +133,7 @@ docker run -d -p 18966:18966 \
 Si vous souhaitez utiliser l'API IPInfo.io, vous pouvez également ajouter ce qui suit :
 
 ```bash
-docker run -d -p 18966:18966 \
+docker run -d -p 11966:11966 \
   -e BING_MAP_API_KEY="YOUR_KEY_HERE" \
   -e ALLOWED_DOMAINS="example.com" \
   -e IPINFO_API_TOKEN="YOUR_TOKEN_HERE" \

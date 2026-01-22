@@ -4,7 +4,7 @@
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/jason5ng32/MyIP)
 ![GitHub forks](https://img.shields.io/github/forks/jason5ng32/myip)
-![Website](https://img.shields.io/website?url=https%3A%2F%2Fipcheck.ing&up_message=online&label=IPCheck.ing)
+![Website](https://img.shields.io/website?url=https%3A%2F%2FIPCheck&up_message=online&label=IPCheck)
 ![PWA](https://img.shields.io/badge/PWA-Supported-blue)
 ![GitHub license](https://img.shields.io/github/license/jason5ng32/MyIP)
 
@@ -14,7 +14,7 @@
 
 🇺🇸 [English](README.md) | 🇨🇳 [简体中文](README_ZH.md) | 🇫🇷 [Français](README_FR.md)
 
-👉 在这里体验：[https://ipcheck.ing](https://ipcheck.ing)
+👉 在这里体验：[https://IPCheck](https://IPCheck)
 
 备注：你可以直接用我已经搭建好的服务，也可以自行搭建。
 
@@ -25,21 +25,21 @@
 
 ## 👀 主要功能
 
-* 🖥️ **看自己的 IP**：从多个 IPv4 和 IPv6 来源检测显示本机的 IP
-* 🕵️ **看 IP 信息**：显示所有 IP 的相关信息，包括国家、地区、ASN、地理位置等
-* 🚦 **可用性检测**：检测一些网站的可用性：Google, Github, Youtube, 网易, 百度等
-* 🚥 **WebRTC 检测**：查看使用 WebRTC 连接时使用的 IP
-* 🛑 **DNS 泄露检测**：查看 DNS 出口信息，以便查看在 VPN/代理的情况下，是否存在 DNS 泄露隐私的风险
-* 🚀 **网速测试**：利用边缘网络进行网速测试
-* 🌐 **全球延迟测试**：从分布在全球的多个服务器进行延迟测试，了解你与全球网络的连接速度
-* 📡 **MTR 测试**：从分布在全球的多个服务器进行 MTR 测试，了解你与全球的连接路径
-* 🌗 **暗黑模式**：根据系统设置自动切换暗黑/白天模式，也可以手动切换
-* 📱 **简约模式**：为移动版提供的专门模式，缩短页面长度，快速查看最重要的信息
-* 🔍 **查任意 IP 信息**：可以通过小工具查询任意 IP 的信息
-* 📲 **支持 PWA**：可以添加为手机桌面应用以及电脑里的 Chrome 应用
-* ⌨️ **支持快捷键**：可以随时输入 `?` 查看快捷键菜单
-* 🌍 根据可用性检测结果，返回目前是否可以访问全世界网络的提示
-* 🇺🇸 🇨🇳 🇫🇷 支持中文、英文、法文
+- 🖥️ **看自己的 IP**：从多个 IPv4 和 IPv6 来源检测显示本机的 IP
+- 🕵️ **看 IP 信息**：显示所有 IP 的相关信息，包括国家、地区、ASN、地理位置等
+- 🚦 **可用性检测**：检测一些网站的可用性：Google, Github, Youtube, 网易, 百度等
+- 🚥 **WebRTC 检测**：查看使用 WebRTC 连接时使用的 IP
+- 🛑 **DNS 泄露检测**：查看 DNS 出口信息，以便查看在 VPN/代理的情况下，是否存在 DNS 泄露隐私的风险
+- 🚀 **网速测试**：利用边缘网络进行网速测试
+- 🌐 **全球延迟测试**：从分布在全球的多个服务器进行延迟测试，了解你与全球网络的连接速度
+- 📡 **MTR 测试**：从分布在全球的多个服务器进行 MTR 测试，了解你与全球的连接路径
+- 🌗 **暗黑模式**：根据系统设置自动切换暗黑/白天模式，也可以手动切换
+- 📱 **简约模式**：为移动版提供的专门模式，缩短页面长度，快速查看最重要的信息
+- 🔍 **查任意 IP 信息**：可以通过小工具查询任意 IP 的信息
+- 📲 **支持 PWA**：可以添加为手机桌面应用以及电脑里的 Chrome 应用
+- ⌨️ **支持快捷键**：可以随时输入 `?` 查看快捷键菜单
+- 🌍 根据可用性检测结果，返回目前是否可以访问全世界网络的提示
+- 🇺🇸 🇨🇳 🇫🇷 支持中文、英文、法文
 
 ## 📕 如何使用
 
@@ -73,7 +73,7 @@ npm run build
 npm start
 ```
 
-程序会运行在 18966 端口。
+程序会运行在 11966 端口。
 
 如果你想添加 Bing 地图，在启动之前，进行如下修改：
 
@@ -118,13 +118,13 @@ IPINFO_API_TOKEN
 点击顶部的部署到 Docker 按钮，即可完成部署，又或者，直接输入下面的命令：
 
 ```bash
-docker run -d -p 18966:18966 --name myip --restart always jason5ng32/myip:latest
+docker run -d -p 11966:11966 --name myip --restart always jason5ng32/myip:latest
 ```
 
 如果你希望展示地图，则在部署的时候，设置 Bing Map API Key 和允许的域名：
 
 ```bash
-docker run -d -p 18966:18966 \
+docker run -d -p 11966:11966 \
   -e BING_MAP_API_KEY="YOUR_KEY_HERE" \
   -e ALLOWED_DOMAINS="example.com" \
   --name myip \
@@ -135,7 +135,7 @@ docker run -d -p 18966:18966 \
 如果你希望同时使用 IPinfo.io 的 API：
 
 ```bash
-docker run -d -p 18966:18966 \
+docker run -d -p 11966:11966 \
   -e BING_MAP_API_KEY="YOUR_KEY_HERE" \
   -e ALLOWED_DOMAINS="example.com" \
   -e IPINFO_API_TOKEN="YOUR_TOKEN_HERE" \

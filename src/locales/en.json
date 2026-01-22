@@ -1,7 +1,7 @@
 {
     "nav": {
         "id": "nav",
-        "Title": "IPCheck.ing",
+        "Title": "IPCheck",
         "IPinfo": "IP Infos",
         "Connectivity": "Connectivity",
         "WebRTC": "WebRTC Test",
@@ -74,7 +74,7 @@
         "id": "pingtest",
         "Title": "Global Latency Test",
         "Note": "Ping test is a network tool used to measure the round-trip time of data packets from your device to specific targets (in this case, our servers located in different continents and regions). It is a key metric for evaluating network performance.",
-        "Note2": "In this process, IPCheck.ing sends small packets of data from servers around the world to your IP address and measures the time it takes for these packets to travel from the server to your device and back. Through these Ping tests from different geographical locations, you can gain a comprehensive view of the speed and stability of your device's connection to the global network.",
+        "Note2": "In this process, IPCheck sends small packets of data from servers around the world to your IP address and measures the time it takes for these packets to travel from the server to your device and back. Through these Ping tests from different geographical locations, you can gain a comprehensive view of the speed and stability of your device's connection to the global network.",
         "Note3": "Currently only IPv4 addresses are supported. Please select your IP address for testing.",
         "SelectIP": "Select an IP Address",
         "Region": "Region",
@@ -141,21 +141,21 @@
         "GoPrevious": "Previous Card"
     },
     "page": {
-        "title": "IPCheck.ing - Check My IP Address and Geolocation - Check WebRTC Connection IP - DNS Leak Test - Speed Test - Jason Ng Open Source",
+        "title": "IPCheck - Check My IP Address and Geolocation - Check WebRTC Connection IP - DNS Leak Test - Speed Test - Jason Ng Open Source",
         "description": "A better IP Toolbox. Easy to check what's your IPs, IP informations, check for DNS leaks, examine WebRTC connections, and test website availability",
         "keywords": "MyIP,IP Tool,My IP,IP check,IP lookup,DNS leak test,WebRTC test,Speed test",
         "footerName": "Creators: Jason Ng, Seven Yu & ChatGPT",
         "footerLink": "https://github.com/jason5ng32/MyIP",
         "copyRightName": "Originally from ",
-        "copyRightLink": "https://ipcheck.ing",
-        "copyRightLinkName": "IPCheck.ing"
+        "copyRightLink": "https://IPCheck",
+        "copyRightLinkName": "IPCheck"
     },
     "helpModal": {
         "Title": "Shortcuts"
     },
     "about": {
         "Title": "About",
-        "product1": "IPCheck.ing is a free IP toolbox that helps you check your IP information, test website availability, examine DNS exit information, perform speed tests, global latency tests, MTR tests, and more.",
+        "product1": "IPCheck is a free IP toolbox that helps you check your IP information, test website availability, examine DNS exit information, perform speed tests, global latency tests, MTR tests, and more.",
         "product2": "This is an open-source project, and you can view the source code by clicking on the GitHub icon at the bottom of the page.",
         "product3": "Initially, this was a personal project for me to learn Vue.js and how to write code using ChatGPT. Over time, it gained more stars on GitHub, so I did a lot of refactoring and added many useful features. I hope you will enjoy it.",
         "meTitle": "About Me",

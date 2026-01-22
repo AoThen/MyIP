@@ -23,8 +23,8 @@ export default defineConfig({
                 globPatterns: ['**/*.{js,css,html}', '*.{js,css,html,png,svg,jpg,webp}']
             },
             manifest: {
-                name: 'IPCheck.ing',
-                short_name: 'IPCheck.ing',
+                name: 'IPCheck',
+                short_name: 'IPCheck',
                 theme_color: '#f8f9fa',
                 orientation: 'portrait',
                 id: 'com.jasonng.myip',

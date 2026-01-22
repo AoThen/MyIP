@@ -6,13 +6,13 @@ services:
         container_name: myip
         restart: unless-stopped
         ports:
-            - '18966:18966'
+            - '11966:11966'
         environment:
-            - PORT=18966
+            - PORT=11966
             - ALLOWED_DOMAINS=${ALLOWED_DOMAINS:-}
             - IPINFO_API_TOKEN=${IPINFO_API_TOKEN:-}
         healthcheck:
-            test: ['CMD', 'wget', '--spider', '-q', 'http://localhost:18966']
+            test: ['CMD', 'wget', '--spider', '-q', 'http://localhost:11966']
             interval: 30s
             timeout: 10s
             retries: 3

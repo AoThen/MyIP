@@ -16,7 +16,7 @@ COPY --from=build-stage /app/server.js ./
 COPY --from=build-stage /app/static-server.js ./
 COPY --from=build-stage /app/api ./api
 
-EXPOSE 18966
+EXPOSE 11966
 
 # 启动应用
 CMD ["npm", "start"]
